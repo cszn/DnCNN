@@ -16,8 +16,7 @@ pauseTime   = 1;
 %%% load [specific] Gaussian denoising model
 
 modelSigma  = min(75,max(10,round(noiseSigma/5)*5)); %%% model noise level
-load(fullfile(folderModel,'GD_Gray_Specifics.mat'),['sigma_',num2str(modelSigma,'%02d')]);
-net = eval(['sigma_',num2str(modelSigma,'%02d'),'.net']);
+load(fullfile(folderModel,'specifics',['sigma=',num2str(modelSigma,'%02d'),'.mat']));
 
 %%% load [blind] Gaussian denoising model %%% for sigma in [0,55]
 
