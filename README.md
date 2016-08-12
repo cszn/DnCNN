@@ -23,7 +23,7 @@ For the training code, feel free to contact: cskaizhang@gmail.com
 
 #### Gaussian Denoising
 
-The average PSNR(dB) results of different methods on the BSD6868 dataset.
+The average PSNR(dB) results of different methods on the BSD68 dataset.
 
 |  Noise Level | BM3D | WNNM  | EPLL | MLP |  CSF |TNRD  | DnCNN-S | DnCNN-B |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
