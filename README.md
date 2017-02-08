@@ -1,9 +1,12 @@
+
 # DnCNN
 ## Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising
 
 ### Main Contents
 
-**demos**:  `Demo_test_DnCNN-.m`.
+**TrainingCodes**:  training demo for Gaussian denoising
+
+**demos**:  `Demo_test_DnCNN-.m`.
 
 **model**:  including the trained models for Gaussian denoising; a single model for Gaussian denoising, single image super-resolution (SISR) and deblocking.
 
