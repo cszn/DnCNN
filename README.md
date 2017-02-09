@@ -4,8 +4,7 @@
 
 ### Main Contents
 
-**TrainingCodes**:  training demo for Gaussian denoising
-
+**TrainingCodes**:  training demo for Gaussian denoising.
 **demos**:  `Demo_test_DnCNN-.m`.
 
 **model**:  including the trained models for Gaussian denoising; a single model for Gaussian denoising, single image super-resolution (SISR) and deblocking.
@@ -17,8 +16,6 @@
 To run the testing demos `Demo_test_DnCNN-.m`, you should first [install](http://www.vlfeat.org/matconvnet/install/) [MatConvNet](http://www.vlfeat.org/matconvnet/).
 
 Note: If you did not install MatConvNet, just replace `res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test')` with `res = simplenn_matlab(net, input)`.
-
-For the training code, feel free to contact: cskaizhang@gmail.com
 
 
 
