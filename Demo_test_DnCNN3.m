@@ -7,7 +7,7 @@ addpath('utilities');
 
 %%% testing set
 tasks       = {'GD','SR','DB'}; %%% three tasks
-imageSets   = {'BSD68','Set5','Set14','BSD100','Urben100','classic5','LIVE1'}; %%% testing dataset
+imageSets   = {'BSD68','Set5','Set14','BSD100','Urban100','classic5','LIVE1'}; %%% testing dataset
 
 %%% setting
 taskTest    = tasks([1 2 3]); %%% choose the tasks for evaluation
