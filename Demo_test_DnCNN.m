@@ -5,12 +5,12 @@
 
 % clear; clc;
 addpath('utilities');
-folderTest  = 'testsets\Set12'; %%% test dataset
-%folderTest  = 'testsets\BSD68';
+testDir = 'testsets';
+folderTest  = 'BSD68'; %%% test dataset
 folderModel = 'model';
 noiseSigma  = 25;  %%% image noise level
 showResult  = 1;
-useGPU      = 1;
+useGPU      = 0; %%% GPU status
 pauseTime   = 1;
 
 %%% load [specific] Gaussian denoising model
@@ -23,8 +23,8 @@ load(fullfile(folderModel,'specifics',['sigma=',num2str(modelSigma,'%02d'),'.mat
 % load(fullfile(folderModel,'GD_Gray_Blind.mat'));
 
 
-%%%
-% net = vl_simplenn_tidy(net);
+%%% uncomment if necessary for different MatConvNet versions
+%net = vl_simplenn_tidy(net);
 
 % for i = 1:size(net.layers,2)
 %     net.layers{i}.precious = 1;
@@ -36,6 +36,7 @@ if useGPU
 end
 
 %%% read images
+folderTest = fullfile(testDir, folderTest);
 ext         =  {'*.jpg','*.png','*.bmp'};
 filePaths   =  [];
 for i = 1 : length(ext)
