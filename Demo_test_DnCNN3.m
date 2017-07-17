@@ -15,7 +15,7 @@ setTest     = {imageSets([1]),imageSets([2:5]),imageSets([6 7])}; %%% select the
 showResult  = [1 1 1]; %%% save the restored images
 pauseTime   = 1;
 folderModel = 'model';
-useGPU      = 1; % 1 or 0, true or false
+useGPU      = 0; % 1 or 0, true or false
 
 folderTest  = 'testsets';
 folderResult= 'results';
@@ -36,6 +36,7 @@ Q       = 20;
 %%% load DnCNN-3 model
 load(fullfile(folderModel,'DnCNN3.mat'));
 
+%%% uncomment if necessary for different MatConvNet versions
 %net = vl_simplenn_tidy(net);
 % for i = 1:size(net.layers,2)
 %     net.layers{i}.precious = 1;
