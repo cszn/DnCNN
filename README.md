@@ -5,10 +5,10 @@
 # Training
 
 - [Simplenn](http://www.vlfeat.org/matconvnet/wrappers/) version
-    * [DnCNN_TrainingCodes_v1.1](DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1)
+    * [DnCNN_TrainingCodes_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_v1.1)
 
 - [DagNN](http://www.vlfeat.org/matconvnet/wrappers/) version
-    * [DnCNN_TrainingCodes_DagNN_v1.1](DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
+    * [DnCNN_TrainingCodes_DagNN_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
 
 # Testing
 
