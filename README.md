@@ -1,49 +1,65 @@
-
 # [DnCNN](http://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf)
-## [Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising](http://ieeexplore.ieee.org/document/7839189/)
+# [Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising](http://ieeexplore.ieee.org/document/7839189/)
+===========================
 
-### Main Contents
+# Training
 
-**TrainingCodes**:  training demo for Gaussian denoising.
+- [Simplenn](http://www.vlfeat.org/matconvnet/wrappers/) version
+    * [DnCNN_TrainingCodes_v1.1](DnCNN/TrainingCodes/DnCNN_TrainingCodes_v1.1)
 
-**demos**:  `Demo_test_DnCNN-.m`.
+- [DagNN](http://www.vlfeat.org/matconvnet/wrappers/) version
+    * [DnCNN_TrainingCodes_DagNN_v1.1](DnCNN/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
 
-**model**:  including the trained models for Gaussian denoising; a single model for Gaussian denoising, single image super-resolution (SISR) and deblocking.
+# Testing
 
-**testsets**:  BSD68 and Set10 for Gaussian denoising evaluation; Set5, Set14, BSD100 and Urban100 datasets for SISR evaluation; Classic5 and LIVE1 for JPEG image deblocking evaluation.
+- [demos]  `Demo_test_DnCNN-.m`.
+
+- [models]  including the trained models for Gaussian denoising; a single model for Gaussian denoising, single image super-resolution (SISR) and deblocking.
+
+- [testsets]  BSD68 and Set10 for Gaussian denoising evaluation; Set5, Set14, BSD100 and Urban100 datasets for SISR evaluation; Classic5 and LIVE1 for JPEG image deblocking evaluation.
+
+# Network Design Rationale
+
+- The residual of a noisy image corrupted by additive white Gaussian noise (AWGN) follows a Gaussian distribution.
+    * Batch normalization and residual learning are beneficial to Gaussian denoising (especially for a single noise level).
+
+- Predicting the residual can be interpreted as performing one gradient descent inference step at starting point (i.e., noisy image).
+    * The parameters in DnCNN are mainly representing the image priors (task-independent), thus it is possible to learn a single model for different tasks.
+
+# Results
 
 
+## Gaussian Denoising
 
-To run the testing demos `Demo_test_DnCNN-.m`, you should first [install](http://www.vlfeat.org/matconvnet/install/) [MatConvNet](http://www.vlfeat.org/matconvnet/).
+**The average PSNR(dB) results of different methods on the BSD68 dataset.**
 
-Note: If you did not install MatConvNet, just replace `res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test')` with `res = simplenn_matlab(net, input)`.
-
-
-
-### Results
-
-#### Gaussian Denoising
-
-The average PSNR(dB) results of different methods on the BSD68 dataset.
-
-|  Noise Level | BM3D | WNNM  | EPLL | MLP |  CSF |TNRD  | DnCNN-S | DnCNN-B |
+|  Noise Level | BM3D | WNNM  | EPLL | MLP |  CSF |TNRD  | DnCNN | DnCNN-B |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 15  |  31.07  |   31.37   | 31.21  |   -   |  31.24 |  31.42 | **31.73** | **31.61**  |
 | 25  |  28.57  |   28.83   | 28.68  | 28.96 |  28.74 |  28.92 | **29.23** | **29.16**  |
 | 50  |  25.62  |   25.87   | 25.67  | 26.03 |    -   |  25.97 | **26.23** | **26.23**  |
 
-#### Gaussian Denoising, Single ImageSuper-Resolution and JPEG Image Deblocking via a Single (DnCNN-3) Model 
 
-Average PSNR(dB)/SSIM results of different methods for Gaussian denoising with noise level 15, 25 and 50 on BSD68 dataset, single image super-resolution with 
-upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG image deblocking with quality factors 10, 20, 30 and 40 on Classic5 and LIVE11 datasets.
+**Visual Results**
 
-###### Gaussian Denoising
+The left is the noisy image corrupted by AWGN, the right is the denoised image by DnCNN.
+
+<img src="figs/05_noisy.png" width="367px"/> <img src="figs/05_dncnn.png" width="367px"/>
+
+<img src="figs/102061_noisy.png" width="367px"/> <img src="figs/102061_dncnn.png" width="367px"/>
+
+## Gaussian Denoising, Single ImageSuper-Resolution and JPEG Image Deblocking via a Single (DnCNN-3) Model 
+
+**Average PSNR(dB)/SSIM results of different methods for Gaussian denoising with noise level 15, 25 and 50 on BSD68 dataset, single image super-resolution with 
+upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG image deblocking with quality factors 10, 20, 30 and 40 on Classic5 and LIVE11 datasets.**
+
+### Gaussian Denoising
 |  Dataset    | Noise Level | BM3D | TNRD | DnCNN-3 |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
 |       |  15  | 31.08 / 0.8722 | 31.42 / 0.8826 | 31.46 / 0.8826 |
 | BSD68 |  25  | 28.57 / 0.8017 | 28.92 / 0.8157 | 29.02 / 0.8190 |
 |       |  50  | 25.62 / 0.6869 | 25.97 / 0.7029 | 26.10 / 0.7076 |
-###### Single Image Super-Resolution
+### Single Image Super-Resolution
 | Dataset | Upscaling Factor | TNRD | VDSR |DnCNN-3|
 |:---------:|:---------:|:---------:|:---------:|:---------:|
 |        | 2 | 36.86 / 0.9556 | 37.56 / 0.9591 | 37.58 / 0.9590 |
@@ -58,7 +74,7 @@ upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG
 |        | 2 | 29.70 / 0.8994 | 30.76 / 0.9143 | 30.74 / 0.9139 |
 |Urban100| 3 | 26.42 / 0.8076 | 27.13 / 0.8283 | 27.15 / 0.8276 |
 |        | 4 | 24.61 / 0.7291 | 25.17 / 0.7528 | 25.20 / 0.7521 |
-###### JPEG Image Deblocking
+### JPEG Image Deblocking
 |  Dataset | Quality Factor | AR-CNN | TNRD | DnCNN-3 |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
 |Classic5| 10 | 29.03 / 0.7929 | 29.28 / 0.7992 | 29.40 / 0.8026 |
@@ -69,3 +85,32 @@ upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG
 |        | 20 | 31.29 / 0.8733 | 31.46 / 0.8769 | 31.59 / 0.8802 |
 |        | 30 | 32.67 / 0.9043 | 32.84 / 0.9059 | 32.98 / 0.9090 |
 |        | 40 | 33.63 / 0.9198 |       -        | 33.96 / 0.9247 |
+
+**Visual Results**
+
+The left is the input image corrupted by different degradations, the right is the restored image by DnCNN-3.
+
+<img src="figs/input.png" width="367px"/> <img src="figs/output.png" width="367px"/>
+
+
+# Requirements and Dependencies
+- MATLAB R2015b
+- [Cuda](https://developer.nvidia.com/cuda-toolkit-archive)-8.0 & [cuDNN](https://developer.nvidia.com/cudnn) v-5.1
+- [MatConvNet](http://www.vlfeat.org/matconvnet/)
+
+or just MATLAB R2015b to test the model.
+https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo_test_DnCNN.m#L64-L65
+
+# Citation
+
+```
+@article{zhang2017beyond,
+  title={Beyond a {Gaussian} denoiser: Residual learning of deep {CNN} for image denoising},
+  author={Zhang, Kai and Zuo, Wangmeng and Chen, Yunjin and Meng, Deyu and Zhang, Lei},
+  journal={IEEE Transactions on Image Processing},
+  year={2017},
+  volume={26}, 
+  number={7}, 
+  pages={3142-3155}, 
+}
+```
