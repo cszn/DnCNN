@@ -24,7 +24,7 @@ addpath('utilities');
 % Configuration
 %-------------------------------------------------------------------------
 opts.modelName        = 'DnCNN'; % model name
-opts.learningRate     = [logspace(-3,-3,22) logspace(-4,-4,105)];% you can change the learning rate
+opts.learningRate     = [logspace(-3,-3,25) logspace(-4,-4,25)];% you can change the learning rate
 opts.batchSize        = 128; % 
 opts.gpus             = [1]; 
 opts.numSubBatches    = 2;
