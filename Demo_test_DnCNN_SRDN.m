@@ -7,11 +7,11 @@ addpath('utilities');
 
 %%% testing set
 tasks       = {'GD','SR','DB'}; %%% three tasks
-imageSets   = {'BSD68','Set5','Set14','BSD100','Urban100','classic5','LIVE1'}; %%% testing dataset
+imageSets   = {'BSD68','Set5','Set14G','Set14','BSD100','Urben100','classic5','LIVE1'}; %%% testing dataset
 
 %%% setting
-taskTest    = tasks([1 2 3]); %%% choose the tasks for evaluation
-setTest     = {imageSets([1]),imageSets([2:5]),imageSets([6 7])}; %%% select the datasets for each tasks
+taskTest    = tasks([2]); %%% choose the tasks for evaluation
+setTest     = {imageSets([1]),imageSets([3]),imageSets([6 7])}; %%% select the datasets for each tasks
 showResult  = [1 1 1]; %%% save the restored images
 pauseTime   = 1;
 folderModel = 'model';
@@ -36,8 +36,7 @@ Q       = 20;
 %%% load DnCNN-3 model
 load(fullfile(folderModel,'DnCNN3.mat'));
 
-%%% uncomment if necessary for different MatConvNet versions
-%net = vl_simplenn_tidy(net);
+net = vl_simplenn_tidy(net);
 % for i = 1:size(net.layers,2)
 %     net.layers{i}.precious = 1;
 % end
@@ -154,7 +153,7 @@ if ismember('SR',taskTest)
         end
         
         %%% folder to store results
-        folderResultCur = fullfile(folderResult, [taskTestCur,'_',setTestCur,'_x',num2str(scale)]);
+        folderResultCur = fullfile(folderResult, [taskTestCur,'_',setTestCur,'_x',num2str(scale), '_GD']);
         if ~exist(folderResultCur,'file')
             mkdir(folderResultCur);
         end
@@ -169,6 +168,10 @@ if ismember('SR',taskTest)
             chanel = size(HR,3);
             %%% LR (uint8)
             LR = imresize(HR,1/scale,'bicubic');
+            %%% noise
+            randn('seed',0);
+            LR = single(im2double(LR) + sigma/255*randn(size(LR)));
+            
             if chanel == 3
                 %%% label (single)
                 HR_ycc = single(rgb2ycbcr(im2double(HR)));
@@ -186,9 +189,9 @@ if ismember('SR',taskTest)
                 %%% input (single)
                 input  = im2single(HR_bic);
                 %%% input_RGB (uint8)
-                input_RGB = HR_bic;
+                input_RGB = im2uint8(HR_bic);
             end
-            
+
             if useGPU
                 input = gpuArray(input);
             end
