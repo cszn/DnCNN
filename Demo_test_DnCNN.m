@@ -5,7 +5,7 @@
 
 % clear; clc;
 addpath('utilities');
-folderTest  = fullfile('testset','Set12'); %%% test dataset
+folderTest  = fullfile('testsets','Set12'); %%% test dataset
 %folderTest  = 'testsets\BSD68';
 folderModel = 'model';
 noiseSigma  = 25;  %%% image noise level
