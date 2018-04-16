@@ -5,7 +5,7 @@
 
 % clear; clc;
 addpath('utilities');
-folderTest  = 'testsets\Set12'; %%% test dataset
+folderTest  = fullfile('testset','Set12'); %%% test dataset
 %folderTest  = 'testsets\BSD68';
 folderModel = 'model';
 noiseSigma  = 25;  %%% image noise level
@@ -24,7 +24,7 @@ load(fullfile(folderModel,'specifics',['sigma=',num2str(modelSigma,'%02d'),'.mat
 
 
 %%%
-% net = vl_simplenn_tidy(net);
+net = vl_simplenn_tidy(net);
 
 % for i = 1:size(net.layers,2)
 %     net.layers{i}.precious = 1;
