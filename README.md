@@ -100,7 +100,7 @@ upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG
 |        | 30 | 32.67 / 0.9043 | 32.84 / 0.9059 | 32.98 / 0.9090 |
 |        | 40 | 33.63 / 0.9198 |       -        | 33.96 / 0.9247 |
 
-**Visual Results**
+### Visual Results
 
 The left is the input image corrupted by different degradations, the right is the restored image by DnCNN-3.
 
