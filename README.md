@@ -18,6 +18,20 @@
 
 - [testsets]  BSD68 and Set10 for Gaussian denoising evaluation; Set5, Set14, BSD100 and Urban100 datasets for SISR evaluation; Classic5 and LIVE1 for JPEG image deblocking evaluation.
 
+# New FDnCNN Models 
+
+I have trained new Flexible DnCNN (FDnCNN) models based on [FFDNet](https://github.com/cszn/FFDNet).
+
+FDnCNN can handle noise level range of [0, 75] via a single model.
+
+[Demo_FDnCNN_Gray.m](Demo_FDnCNN_Gray.m)
+
+[Demo_FDnCNN_Gray_Clip.m](Demo_FDnCNN_Gray_Clip.m)
+
+[Demo_FDnCNN_Color.m](Demo_FDnCNN_Color.m)
+
+[Demo_FDnCNN_Color_Clip.m](Demo_FDnCNN_Color_Clip.m)
+
 # Network Design Rationale
 
 - The residual of a noisy image corrupted by additive white Gaussian noise (AWGN) follows a Gaussian distribution.
@@ -37,7 +51,7 @@
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 15  |  31.07  |   31.37   | 31.21  |   -   |  31.24 |  31.42 | **31.73** | **31.61**  |**31.69**  |
 | 25  |  28.57  |   28.83   | 28.68  | 28.96 |  28.74 |  28.92 | **29.23** | **29.16**  |**29.22**  |
-| 50  |  25.62  |   25.87   | 25.67  | 26.03 |    -   |  25.97 | **26.23** | **26.23**  |**26.27**  |
+| 50  |  25.62  |   25.87   | 25.67  | 26.03 |    -   |  25.97 | **26.23** | **26.23**  | **26.27** |
 
 
 **Visual Results**
