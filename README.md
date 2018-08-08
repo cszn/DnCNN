@@ -37,6 +37,12 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
 - The residual of a noisy image corrupted by additive white Gaussian noise (AWGN) follows a Gaussian distribution.
     * Batch normalization and residual learning are beneficial to Gaussian denoising (especially for a single noise level).
 
+    * Histogram of noisy patches, clean patches, and residual patches from a batch of training. The noise level is 25, the patch size is 40x40, the batch size is 128.
+     <img src="figs/batch1.png" width="800px"/>
+     
+    * Histogram of noisy patches, clean patches, and residual patches from another batch of training. The noise level is 25, the patch size is 40x40, the batch size is 128.
+     <img src="figs/batch2.png" width="800px"/>
+
 - Predicting the residual can be interpreted as performing one gradient descent inference step at starting point (i.e., noisy image).
     * The parameters in DnCNN are mainly representing the image priors (task-independent), thus it is possible to learn a single model for different tasks.
 
