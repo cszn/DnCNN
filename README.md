@@ -71,11 +71,13 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
 
 **Visual Results**
 
-The left is the noisy image corrupted by AWGN, the right is the denoised image by DnCNN.
+The left is the noisy image corrupted by AWGN, the middle is the denoised image by DnCNN, the right is the ground-truth.
 
-<img src="figs/05_noisy.png" width="367px"/> <img src="figs/05_dncnn.png" width="367px"/>
+<img src="figs/05_25_noisy.png" width="270px"/> <img src="figs/05_25.png" width="270px"/> <img src="testsets/Set12/05.png" width="270px"/>
 
-<img src="figs/102061_noisy.png" width="367px"/> <img src="figs/102061_dncnn.png" width="367px"/>
+<img src="figs/02_25_noisy.png" width="270px"/> <img src="figs/02_25.png" width="270px"/> <img src="testsets/Set12/02.png" width="270px"/>
+
+<img src="figs/102061_noisy.png" width="270px"/> <img src="figs/102061_dncnn.png" width="270px"/> <img src="figs/102061.png" width="270px"/>
 
 ## Gaussian Denoising, Single ImageSuper-Resolution and JPEG Image Deblocking via a Single (DnCNN-3) Model 
 
