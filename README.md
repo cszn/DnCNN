@@ -47,7 +47,13 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
      * Noise-free image super-resolution does not have this property.
      
 - Predicting the residual can be interpreted as performing one gradient descent inference step at starting point (i.e., noisy image).
-    * The parameters in DnCNN are mainly representing the image priors (task-independent), thus it is possible to learn a single model for different tasks.
+
+    * The parameters in DnCNN are mainly representing the image priors (task-independent), thus it is possible to learn a single model for different tasks, such as image denoising, image super-resolution and JPEG image deblocking.
+    
+    * The left is the input image corrupted by different degradations, the right is the restored image by DnCNN-3.
+
+   <img src="figs/input.png" width="390px"/> <img src="figs/output.png" width="390px"/>
+   
 
 # Results
 
@@ -108,12 +114,6 @@ upscaling factors 2, 3 and 40 on Set5, Set14, BSD100 and Urban100 datasets, JPEG
 |        | 20 | 31.29 / 0.8733 | 31.46 / 0.8769 | 31.59 / 0.8802 |
 |        | 30 | 32.67 / 0.9043 | 32.84 / 0.9059 | 32.98 / 0.9090 |
 |        | 40 | 33.63 / 0.9198 |       -        | 33.96 / 0.9247 |
-
-### Visual Results
-
-The left is the input image corrupted by different degradations, the right is the restored image by DnCNN-3.
-
-<img src="figs/input.png" width="367px"/> <img src="figs/output.png" width="367px"/>
 
 
 # Requirements and Dependencies
