@@ -32,13 +32,18 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
 
 [Demo_FDnCNN_Color_Clip.m](Demo_FDnCNN_Color_Clip.m)
 
-# Network Design Rationale
+
+# Network Architecture and Design Rationale
+
+- Network Architecture
+
+   <img src="figs/dncnn.png" width="800px"/>
 
 - Batch normalization and residual learning are beneficial to Gaussian denoising (especially for a single noise level). The residual of a noisy image corrupted by additive white Gaussian noise (AWGN) follows a constant Gaussian distribution which stablizes batch normalization during training.
 
     * Histogram of noisy patches, clean patches, and residual (noise) patches from a batch of training. The noise level is 25, the patch size is 40x40, the batch size is 128.
     
-     <img src="figs/batch1.png" width="800px"/>
+   <img src="figs/batch1.png" width="800px"/>
      
     * Histogram of noisy patches, clean patches, and residual (noise) patches from another batch of training. The noise level is 25, the patch size is 40x40, the batch size is 128.
     
