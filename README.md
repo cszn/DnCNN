@@ -1,8 +1,11 @@
 # [DnCNN](http://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf)
 # [Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising](http://ieeexplore.ieee.org/document/7839189/)
 
+# New Training and Testing Codes ([Keras](https://keras.io/))
 
-# Training
+- [DnCNN-keras](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/dncnn_keras)
+
+# Training ([Matconvnet](http://www.vlfeat.org/matconvnet/))
 
 - [Simplenn](http://www.vlfeat.org/matconvnet/wrappers/) version
     * [DnCNN_TrainingCodes_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_v1.1)
@@ -10,7 +13,7 @@
 - [DagNN](http://www.vlfeat.org/matconvnet/wrappers/) version
     * [DnCNN_TrainingCodes_DagNN_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
 
-# Testing
+# Testing (Matconvnet or only matlab)
 
 - [demos]  `Demo_test_DnCNN-.m`.
 
