@@ -1,6 +1,6 @@
 # DnCNN-keras     
 
-This code is modified from (husqin)[https://github.com/husqin/DnCNN-keras].
+This code is modified from [husqin](https://github.com/husqin/DnCNN-keras).
 
 ### Dependence
 ```
@@ -9,6 +9,8 @@ keras2
 numpy
 opencv
 ```
+
+<img src="readme.png" width="380px"/>
 
 ### Train
 ```
