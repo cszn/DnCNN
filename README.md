@@ -13,7 +13,7 @@
 - [DagNN](http://www.vlfeat.org/matconvnet/wrappers/) version
     * [DnCNN_TrainingCodes_DagNN_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
 
-# Testing (Matconvnet or only matlab)
+# Testing ([Matconvnet](http://www.vlfeat.org/matconvnet/) or matlab)
 
 - [demos]  `Demo_test_DnCNN-.m`.
 
