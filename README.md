@@ -5,7 +5,7 @@
 
 - [DnCNN-keras](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/dncnn_keras)
 
-# Training ([Matconvnet](http://www.vlfeat.org/matconvnet/))
+# Training ([MatConvNet](http://www.vlfeat.org/matconvnet/))
 
 - [Simplenn](http://www.vlfeat.org/matconvnet/wrappers/) version
     * [DnCNN_TrainingCodes_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_v1.1)
@@ -13,7 +13,7 @@
 - [DagNN](http://www.vlfeat.org/matconvnet/wrappers/) version
     * [DnCNN_TrainingCodes_DagNN_v1.1](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/DnCNN_TrainingCodes_DagNN_v1.1)
 
-# Testing ([Matconvnet](http://www.vlfeat.org/matconvnet/) or matlab)
+# Testing ([MatConvNet](http://www.vlfeat.org/matconvnet/) or Matlab)
 
 - [demos]  `Demo_test_DnCNN-.m`.
 
