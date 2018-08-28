@@ -65,7 +65,8 @@ def DnCNN(depth,filters=64,image_channels=1, use_bnorm=True):
         x = Conv2D(filters=filters, kernel_size=(3,3), strides=(1,1),kernel_initializer='Orthogonal', padding='same',use_bias = False,name = 'conv'+str(layer_count))(x)
         if use_bnorm:
             layer_count += 1
-            x = BatchNormalization(axis=3, momentum=0.1,epsilon=0.0001, name = 'bn'+str(layer_count))(x)
+            #x = BatchNormalization(axis=3, momentum=0.1,epsilon=0.0001, name = 'bn'+str(layer_count))(x) 
+	    x = BatchNormalization(axis=3, momentum=0.0,epsilon=0.0001, name = 'bn'+str(layer_count))(x)
         layer_count += 1
         x = Activation('relu',name = 'relu'+str(layer_count))(x)  
     # last layer, Conv
@@ -131,8 +132,8 @@ def train_datagen(epoch_iter=2000,epoch_num=5,batch_size=128,data_dir=args.train
 # define loss
 def sum_squared_error(y_true, y_pred):
     #return K.mean(K.square(y_pred - y_true), axis=-1)
-	return K.sum(K.square(y_pred - y_true), axis=-1)/2
-    
+    #return K.sum(K.square(y_pred - y_true), axis=-1)/2
+    return K.sum(K.square(y_pred - y_true))/2
     
 if __name__ == '__main__':
     # model selection
