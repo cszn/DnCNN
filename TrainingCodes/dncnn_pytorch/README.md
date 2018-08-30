@@ -1,6 +1,6 @@
 # DnCNN-PyTorch
 
-This code is modified from (SaoYan)[https://github.com/SaoYan/DnCNN-PyTorch].
+This code is modified from [SaoYan](https://github.com/SaoYan/DnCNN-PyTorch).
 
 ## Dependence
 ```
