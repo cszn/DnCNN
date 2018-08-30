@@ -2,7 +2,7 @@
 
 This code is modified from [husqin](https://github.com/husqin/DnCNN-keras).
 
-### Dependence
+## Dependence
 ```
 tensorflow
 keras2
@@ -12,20 +12,20 @@ opencv
 
 <img src="readme.png" width="380px"/>
 
-### Train
+## Train
 ```
 main_train.py
 ```
 
-### Test
+## Test
 
 ```
 main_test.py
 ```
 
-### Results
+## Results
 
-#### Gaussian Denoising
+### Gaussian Denoising
 
 The average PSNR(dB) results of different methods on the BSD68 dataset.
 
