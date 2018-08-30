@@ -6,6 +6,7 @@ This code is modified from [SaoYan](https://github.com/SaoYan/DnCNN-PyTorch).
 ```
 pytorch 0.4.1
 ```
+<img src="readme.png" width="380px"/>
 
 ## Train
 ```
