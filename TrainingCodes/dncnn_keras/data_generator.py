@@ -71,8 +71,8 @@ def gen_patches(file_name):
         h_scaled, w_scaled = int(h*s),int(w*s)
         img_scaled = cv2.resize(img, (h_scaled,w_scaled), interpolation=cv2.INTER_CUBIC)
         # extract patches
-        for i in range(0, h_scaled-patch_size+1, stride):
-            for j in range(0, w_scaled-patch_size+1, stride):
+        for i in range(0, w_scaled-patch_size+1, stride):
+            for j in range(0, h_scaled-patch_size+1, stride):
                 x = img_scaled[i:i+patch_size, j:j+patch_size]
                 #patches.append(x)        
                 # data aug
@@ -84,7 +84,7 @@ def gen_patches(file_name):
 
 def datagenerator(data_dir='data/Train400',verbose=False):
     
-    file_list = glob.glob(data_dir+'/*.png')  # get name list of all .png files
+    file_list = glob.glob(data_dir+'/*.jpg')  # get name list of all .png files
     # initrialize
     data = []
     # generate patches
@@ -94,6 +94,7 @@ def datagenerator(data_dir='data/Train400',verbose=False):
         if verbose:
             print(str(i+1)+'/'+ str(len(file_list)) + ' is done ^_^')
     data = np.array(data, dtype='uint8')
+#     return data
     data = data.reshape((data.shape[0]*data.shape[1],data.shape[2],data.shape[3],1))
     discard_n = len(data)-len(data)//batch_size*batch_size;
     data = np.delete(data,range(discard_n),axis = 0)
