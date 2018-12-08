@@ -149,3 +149,50 @@ https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo
   pages={3142-3155}, 
 }
 ```
+
+====================================================================
+
+## [Convolutional Neural Networks for Image Denoising and Restoration](https://link.springer.com/chapter/10.1007/978-3-319-96029-6_4)
+
+```
+@Inbook{zuo2018convolutional,
+author={Zuo, Wangmeng and Zhang, Kai and Zhang, Lei},
+editor={Bertalm{\'i}o, Marcelo},
+title={Convolutional Neural Networks for Image Denoising and Restoration},
+bookTitle={Denoising of Photographic Images and Video: Fundamentals, Open Challenges and New Trends},
+year={2018},
+publisher={Springer International Publishing},
+address={Cham},
+pages={93--123},
+isbn={978-3-319-96029-6},
+doi={10.1007/978-3-319-96029-6_4},
+url={https://doi.org/10.1007/978-3-319-96029-6_4}
+}
+```
+
+### Challenges and Possible Solutions (from the above book chapter)
+
+While the image denoising for AWGN removal has been well-studied, little work has been done on real image denoising.
+The main difficulty arises from the fact that real noises are much more complex than AWGN and it is not an easy task to
+thoroughly evaluate the performance of a denoiser. Fig. 4.15 shows four typical noise types in real world.
+It can be seen that the characteristics of those noises are very different and a single noise level may be not enough to parameterize those noise types. In most cases, a denoiser can only work well under a certain noise model.
+For example, a denoising model trained for AWGN removal is not effective for mixed Gaussian and Poisson noise removal.
+This is intuitively reasonable because the CNN-based methods can be treated as general case of Eq. (4.3) and the important data fidelity term corresponds to the degradation process. In spite of this, the image denoising for AWGN removal is valuable due to the following reasons. First, it is an ideal test bed to evaluate the effectiveness of different CNN-based denoising methods.
+Second, in the unrolled inference via variable splitting techniques, many image restoration problems can be addressed by sequentially solving a series of Gaussian denoising subproblems, which further broadens the application fields.
+
+<img src="figs/noisetype.png" width="800px"/> 
+
+To improve the practicability of a CNN denoiser, perhaps the most straightforward way is to capture adequate amounts of real noisy-clean training pairs for training so that the real degradation space can be covered. This solution has advantage that there is no need to know the complex degradation process. However, deriving the corresponding clean image of a noisy one is not a trivial task due to the need of careful post-processing steps, such as spatial alignment and illumination correction. Alternatively, one can simulate the real degradation process to synthesize noisy images for a clean one. However, it is not easy to accurately model the complex degradation process. In particular, the noise model can be different across different cameras. Nevertheless, it is practically preferable to roughly model a certain noise type for training and then use the learned CNN model for type-specific denoising.
+
+Besides the training data, the robust architecture and robust training also play vital roles for the success of a CNN denoiser.
+For the robust architecture, designing a deep multiscale CNN which involves a coarse-to-fine procedure is a promising direction.
+Such a network is expected to inherit the merits of multiscale:
+(i) the noise level decreases at larger scales;
+(ii) the ubiquitous low-frequency noise can be alleviated by multiscale procedure;
+and (iii) downsampling the image before denoising can effectively enlarge the receptive filed.
+For the robust training, the effectiveness of the denoiser trained with generative adversarial networks (GAN) for real image denoising still remains further investigation. The main idea of GAN-based denoising is to introduce an adversarial loss to improve the perceptual quality of denoised image. Besides, a distinctive advantage of GAN is that it can do unsupervised learning. More specifically,
+the noisy image without ground truth can be used in the training. So far, we have provided several possible solutions to improve the practicability of a CNN denoiser. We should note that those solutions can be combined to further improve the performance.
+
+
+
+
