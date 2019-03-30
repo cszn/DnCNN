@@ -17,7 +17,7 @@ import torch.nn as nn
 
 
 def merge_bn(model):
-    r''' merge all 'Conv+BN' (or 'TConv+BN') into 'Conv' (or 'TConv')
+    ''' merge all 'Conv+BN' (or 'TConv+BN') into 'Conv' (or 'TConv')
     based on https://github.com/pytorch/pytorch/pull/901
     by Kai Zhang (cskaizhang@gmail.com) 
     https://github.com/cszn/DnCNN
@@ -52,12 +52,12 @@ def merge_bn(model):
         merge_bn(m)
 
 
-def deploy_sequential(model):
+def tidy_sequential(model):
     for k, m in list(model.named_children()):
         if isinstance(m, nn.Sequential):
             if m.__len__() == 1:
                 model._modules[k] = m.__getitem__(0)
-        deploy_sequential(m)
+        tidy_sequential(m)
 
 ```
 
