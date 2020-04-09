@@ -7,7 +7,7 @@
 - [main_test_dncnn.py](https://github.com/cszn/KAIR/blob/master/main_test_dncnn.py)
 
 ```
-The pytorch models are transferred from matlab. The model parameters of MatConvnet and PyTorch are same.
+The model parameters of MatConvnet and PyTorch are same.
 ```
 
 
