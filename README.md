@@ -197,7 +197,7 @@ https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo
 
 # Citation
 
-```
+```bibtex
 @article{zhang2017beyond,
   title={Beyond a {Gaussian} denoiser: Residual learning of deep {CNN} for image denoising},
   author={Zhang, Kai and Zuo, Wangmeng and Chen, Yunjin and Meng, Deyu and Zhang, Lei},
@@ -213,7 +213,7 @@ https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo
 
 ## [Convolutional Neural Networks for Image Denoising and Restoration](https://link.springer.com/chapter/10.1007/978-3-319-96029-6_4)
 
-```
+```bibtex
 @Inbook{zuo2018convolutional,
 author={Zuo, Wangmeng and Zhang, Kai and Zhang, Lei},
 editor={Bertalm{\'i}o, Marcelo},
