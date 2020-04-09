@@ -6,11 +6,9 @@
 
 - [main_test_dncnn.py](https://github.com/cszn/KAIR/blob/master/main_test_dncnn.py)
 
-# Training and Testing Codes ([Keras](https://keras.io/) and [PyTorch](https://pytorch.org/))
-
-- [DnCNN-keras](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/dncnn_keras)
-
-- [DnCNN-pytorch](https://github.com/cszn/DnCNN/tree/master/TrainingCodes/dncnn_pytorch)
+```
+The pytorch models are transferred from matlab. The model parameters of MatConvnet and PyTorch are same.
+```
 
 
 ## Merge batch normalization (PyTorch)
