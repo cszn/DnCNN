@@ -121,7 +121,7 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
     
     * The left is the input image corrupted by different degradations, the right is the restored image by DnCNN-3.
 
-   <img src="figs/input.png" width="390px"/> <img src="figs/output.png" width="390px"/>
+   <img src="figs/input.png" width="350px"/> <img src="figs/output.png" width="350px"/>
    
 
 # Results
@@ -142,11 +142,11 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
 
 The left is the noisy image corrupted by AWGN, the middle is the denoised image by DnCNN, the right is the ground-truth.
 
-<img src="figs/05_25_noisy.png" width="270px"/> <img src="figs/05_25.png" width="270px"/> <img src="testsets/Set12/05.png" width="270px"/>
+<img src="figs/05_25_noisy.png" width="250px"/> <img src="figs/05_25.png" width="250px"/> <img src="testsets/Set12/05.png" width="250px"/>
 
-<img src="figs/02_25_noisy.png" width="270px"/> <img src="figs/02_25.png" width="270px"/> <img src="testsets/Set12/02.png" width="270px"/>
+<img src="figs/02_25_noisy.png" width="250px"/> <img src="figs/02_25.png" width="250px"/> <img src="testsets/Set12/02.png" width="250px"/>
 
-<img src="figs/102061_noisy.png" width="270px"/> <img src="figs/102061_dncnn.png" width="270px"/> <img src="figs/102061.png" width="270px"/>
+<img src="figs/102061_noisy.png" width="250px"/> <img src="figs/102061_dncnn.png" width="250px"/> <img src="figs/102061.png" width="250px"/>
 
 ## Gaussian Denoising, Single ImageSuper-Resolution and JPEG Image Deblocking via a Single (DnCNN-3) Model 
 
@@ -197,7 +197,7 @@ https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo
 
 # Citation
 
-```
+```BibTex
 @article{zhang2017beyond,
   title={Beyond a {Gaussian} denoiser: Residual learning of deep {CNN} for image denoising},
   author={Zhang, Kai and Zuo, Wangmeng and Chen, Yunjin and Meng, Deyu and Zhang, Lei},
