@@ -1,14 +1,19 @@
 # [DnCNN](http://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf)
 # [Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising](http://ieeexplore.ieee.org/document/7839189/)
 
-# New training and testing codes ([PyTorch](https://github.com/cszn/KAIR)) - 18/12/2019
+# [PyTorch training and testing code](https://github.com/cszn/KAIR) - 18/12/2019
+
+```
+I recommend to use the PyTorch code for training and testing. The model parameters of MatConvnet and PyTorch are same.
+```
+
 - [main_train_dncnn.py](https://github.com/cszn/KAIR/blob/master/main_train_dncnn.py)
 
 - [main_test_dncnn.py](https://github.com/cszn/KAIR/blob/master/main_test_dncnn.py)
 
-```
-The model parameters of MatConvnet and PyTorch are same.
-```
+- [main_test_dncnn3_deblocking.py](https://github.com/cszn/KAIR/blob/master/main_test_dncnn3_deblocking.py)
+
+
 
 
 ## Merge batch normalization (PyTorch)
