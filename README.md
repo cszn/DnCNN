@@ -3,9 +3,9 @@
 
 # [PyTorch training and testing code](https://github.com/cszn/KAIR) - 18/12/2019
 
-```
-I recommend to use the PyTorch code for training and testing. The model parameters of MatConvnet and PyTorch are same.
-```
+
+`I recommend to use the PyTorch code for training and testing. The model parameters of MatConvnet and PyTorch are same.`
+
 
 - [main_train_dncnn.py](https://github.com/cszn/KAIR/blob/master/main_train_dncnn.py)
 
