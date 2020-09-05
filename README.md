@@ -1,6 +1,17 @@
 # [DnCNN](http://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf)
 # [Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for Image Denoising](http://ieeexplore.ieee.org/document/7839189/)
 
+**News:** [DRUNet](https://github.com/cszn/DPIR)
+
+* State-of-the-art denoising performance
+
+* Can be used for plug-and-play image restoration
+
+* <img src="https://github.com/cszn/DPIR/raw/master/figs/grayscale_psnr.png" width="550px"/> 
+
+* [https://github.com/cszn/DPIR/blob/master/main_dpir_denoising.py](https://github.com/cszn/DPIR/blob/master/main_dpir_denoising.py)
+
+
 # [PyTorch training and testing code](https://github.com/cszn/KAIR) - 18/12/2019
 
 
@@ -136,11 +147,11 @@ FDnCNN can handle noise level range of [0, 75] via a single model.
 
 **The average PSNR(dB) results of different methods on the BSD68 dataset.**
 
-|  Noise Level | BM3D | WNNM  | EPLL | MLP |  CSF |TNRD  | DnCNN | DnCNN-B | FDnCNN |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| 15  |  31.07  |   31.37   | 31.21  |   -   |  31.24 |  31.42 | **31.73** | **31.61**  |**31.69**  |
-| 25  |  28.57  |   28.83   | 28.68  | 28.96 |  28.74 |  28.92 | **29.23** | **29.16**  |**29.22**  |
-| 50  |  25.62  |   25.87   | 25.67  | 26.03 |    -   |  25.97 | **26.23** | **26.23**  | **26.27** |
+|  Noise Level | BM3D | WNNM  | EPLL | MLP |  CSF |TNRD  | DnCNN | DnCNN-B | FDnCNN | DRUNet |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| 15  |  31.07  |   31.37   | 31.21  |   -   |  31.24 |  31.42 | **31.73** | **31.61**  |**31.69**  | 31.91 |
+| 25  |  28.57  |   28.83   | 28.68  | 28.96 |  28.74 |  28.92 | **29.23** | **29.16**  |**29.22**  | 29.48 |    
+| 50  |  25.62  |   25.87   | 25.67  | 26.03 |    -   |  25.97 | **26.23** | **26.23**  | **26.27** | 26.59 |   
 
 
 **Visual Results**
@@ -211,6 +222,12 @@ https://github.com/cszn/DnCNN/blob/4a4b5b8bcac5a5ac23433874d4362329b25522ba/Demo
   volume={26}, 
   number={7}, 
   pages={3142-3155}, 
+}
+@article{zhang2020plug,
+  title={Plug-and-Play Image Restoration with Deep Denoiser Prior},
+  author={Zhang, Kai and Li, Yawei and Zuo, Wangmeng and Zhang, Lei and Van Gool, Luc and Timofte, Radu},
+  journal={arXiv preprint},
+  year={2020}
 }
 ```
 
