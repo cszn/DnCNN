@@ -91,7 +91,7 @@ def gen_patches(file_name):
     patches = []
     for s in scales:
         h_scaled, w_scaled = int(h*s), int(w*s)
-        img_scaled = cv2.resize(img, (h_scaled, w_scaled), interpolation=cv2.INTER_CUBIC)
+        img_scaled = cv2.resize(img, (w_scaled, h_scaled), interpolation=cv2.INTER_CUBIC)
         # extract patches
         for i in range(0, h_scaled-patch_size+1, stride):
             for j in range(0, w_scaled-patch_size+1, stride):
